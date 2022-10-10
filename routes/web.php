@@ -1,4 +1,4 @@
-<?php
+;<?php
 
 use App\Services\Newsletter;
 use Illuminate\Routing\middleware;
