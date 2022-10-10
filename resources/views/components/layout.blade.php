@@ -1,5 +1,6 @@
-<!doctype html>
+<!DOCTYPE html>
 
+<html lang="en">
 <title>My awesome project</title>
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
