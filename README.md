@@ -20,6 +20,13 @@ This is a simple laravel blog.This project is built with laravel 9,alipnejs and 
 - CRUD functionality for categories
 
 ## Getting Started
-To get started please run `php artisan migrate:fresh --seed` .This will migrate all the necessary database tables, create an admin with email `admin@admin.com` and password `password` along with 50 dummy posts created by that admin. This can be modified as necessary.
+
+Rename `.env.example` file to `.env` inside your project root and fill the database information.
+Open the console and cd your project root directory
+- Run `composer install`
+- Run `php artisan key:generate`
+- Run `php artisan migrate:fresh --seed`.This will migrate all the necessary database tables, create an admin with email `admin@admin.com` and password `password` along with 50 dummy posts created by that admin. This can be modified as necessary.
+- Run `php artisan serve`<br />
+Have fun toying around with your brand new app.
 
 #### Any outside help or ideas are more than welcome.
