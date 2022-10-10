@@ -12,6 +12,7 @@ This is a simple laravel blog.This project is built with laravel 9,alipnejs and 
 - Using dummy user/post profile pictures if no pictures were provided.
 - Flash notifications
 - Pagination
+- Using databse seeders
 
 ## To Do
 
