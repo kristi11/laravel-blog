@@ -9,12 +9,8 @@ This is a simple laravel blog.This project is built with laravel 9,alipnejs and 
 - Image uploading
 - Showing posts based on which user created them or what category they belong to
 - Detencing wether a user is administrator or not and logging in/showing different pages based on the logged in user's role
-- Using dummy user/post profile pictures if no pictures were provided
-<<<<<<< HEAD
+- Using dummy user/post profile pictures if no pictures were provided.
 - Flash notifications
-=======
-- Flash notifications 
->>>>>>> 987f6f6181fbd338f139dfd7d082798d44536f2b
 
 ## To Do
 
