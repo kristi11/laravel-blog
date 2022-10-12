@@ -9,7 +9,7 @@
                 <x-form.input name="name" type="text"/>
                 <x-form.input name="username" type="text"/>
                 <x-form.input name="email" type="email"/>
-                <x-form.input name="password" type="text"/>
+                <x-form.input name="password" type="password"/>
 
                 <x-form.button>Submit</x-form.button>
             </form>

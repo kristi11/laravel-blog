@@ -19,6 +19,10 @@
                         New Post
                     </a>
                 </li>
+                <li>
+                    <a href="/admin/categories" class="{{ request()->is('admin/categories') ? 'text-blue-500' : '' }}">
+                        Categories</a>
+                </li>
             </ul>
         </aside>
         <main class="flex-1">

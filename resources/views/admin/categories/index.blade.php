@@ -1,25 +1,28 @@
 <x-layout>
-    <x-setting heading="Manage posts">
+    <x-setting heading="Manage categories">
+        <x-form.error name="category"/>
+        <form method="POST" action="/admin/categories" class="grid gap-4 grid-cols-3 mb-2">
+            @csrf
+
+            <x-form.input name="name" type="text"/>
+            <x-form.input name="slug" type="text"/>
+
+            <x-form.button>Add category</x-form.button>
+
+        </form>
         <div class="flex flex-col">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                    <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-                        <table class="min-w-full divide-y divide-gray-200">
+                       <table class="min-w-full divide-y divide-gray-200">
                             <tbody class="bg-white divide-y divide-gray-200">
-                                @foreach ($posts as $post)
+                                @foreach ($categories as $category)
                                     <tr>
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             <div class="flex items-center">
-                                                <div class="flex-shrink-0 w-10 h-10">
-                                                    <img class="w-10 h-10 w-full rounded-full" src =
-                                                        @if (! $post->thumbnail)
-                                                            "https://dummyimage.com/600x400/ededed/ffffff.jpg&text=Empty+placeholder"
-                                                        @else
-                                                            {{ asset('storage/' . $post->thumbnail) }}
-                                                        @endif
-                                                            alt="Blog Post illustration"
-                                                            class="rounded-xl w-full"
-                                                    >
+                                                <div class="text-sm font-medium text-gray-900">
+                                                    <p>
+                                                        {{ $category->name }}
+                                                    </p>
                                                 </div>
                                             </div>
                                         </td>
@@ -27,19 +30,25 @@
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             <div class="flex items-center">
                                                 <div class="text-sm font-medium text-gray-900">
-                                                    <a href="/posts/{{ $post->slug }}">
-                                                        {{ $post->title }}
-                                                    </a>
+                                                    <p>
+                                                        @if (count($category->posts) == 0)
+                                                        no posts for this category
+                                                        @elseif (count($category->posts) == 1)
+                                                        {{ $category->posts->count() }} post with this category
+                                                        @else
+                                                        {{ $category->posts->count() }} posts with this category
+                                                        @endif
+                                                    </p>
                                                 </div>
                                             </div>
                                         </td>
 
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                            <a href="/admin/posts/{{ $post->id }}/edit" class="text-blue-500 hover:text-blue-600">Edit</a>
+                                            <a href="/admin/categories/{{ $category->id }}/edit" class="text-blue-500 hover:text-blue-600">Edit</a>
                                         </td>
 
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                            <form method="POST" action="/admin/posts/{{ $post->id }}">
+                                            <form method="POST" action="/admin/categories/{{ $category->id }}">
                                                 @csrf
                                                 @method('DELETE')
 
@@ -50,12 +59,14 @@
                                 @endforeach
                             </tbody>
                         </table>
-                    </div>
                     <div class="mt-5">
-                        {{ $posts->links() }}
+                        {{ $categories->links() }}
                     </div>
                 </div>
             </div>
         </div>
     </x-setting>
 </x-layout>
+
+
+

@@ -10,6 +10,7 @@ use App\Http\Controllers\AdminPostController;
 use App\Http\Controllers\NewsletterController;
 use Illuminate\Validation\ValidationException;
 use App\Http\Controllers\PostCommentsController;
+use App\Http\Controllers\AdminCategoriesController;
 
     // PostController---------------------------------------------------------------------
     Route::get('/', [PostController::class, 'index'])->name('home');
@@ -26,13 +27,16 @@ use App\Http\Controllers\PostCommentsController;
 
     Route::post('sessions', [SessionController::class, 'store'])->middleware('guest');
 
-    Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth');
+
     // NewsletterController---------------------------------------------------------------
     Route::post('newsletter', NewsletterController::class);
     // AdminPostController----------------------------------------------------------------
     Route::middleware('can:admin')->group(function () {
         // we can use Route::resource instead of individually typing every single post but at times this can confuze a lot of people so im gonna leave the single routes commented incase someone needs the individual ones.
         Route::resource('admin/posts', AdminPostController::class);
+        Route::post('logout', [SessionController::class, 'destroy']);
+        // AdminCategoriesController------------------------------------------------------
+        Route::resource('admin/categories', AdminCategoriesController::class);
     });
 
     // Route::get('admin/posts', [AdminPostController::class, 'index']);
