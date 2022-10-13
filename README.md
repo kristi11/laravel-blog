@@ -13,13 +13,13 @@ This is a simple laravel blog.This project is built with laravel 9,alipnejs and 
 - Flash notifications
 - Pagination
 - Using databse seeders
+- Added CRUD functionality for categories
 
 ## To Do
 
 - User verification
 - Password reset functionality
 - Edit personal info (user specific info)
-- CRUD functionality for categories
 
 ## Getting Started
 
