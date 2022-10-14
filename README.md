@@ -14,6 +14,7 @@ This is a simple laravel blog.This project is built with laravel 9,alipnejs and 
 - Pagination
 - Using databse seeders
 - Added CRUD functionality for categories
+- Added CRUD functionality for users
 
 ## To Do
 
