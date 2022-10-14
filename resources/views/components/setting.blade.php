@@ -7,7 +7,14 @@
     <div class="flex">
         <aside class="w-48 flex-shrink-0">
             <h4 class="font-semibold mb-4">Links</h4>
+
             <ul>
+                <li>
+                    <a href="/users" class="{{ request()->is('users') ? 'text-blue-500' : '' }}">
+                        Account
+                    </a>
+                </li>
+                @can ('admin')
                 <li>
                     <a href="/admin/posts" class="{{ request()->is('admin/posts') ? 'text-blue-500' : '' }}">
                         All posts
@@ -23,7 +30,9 @@
                     <a href="/admin/categories" class="{{ request()->is('admin/categories') ? 'text-blue-500' : '' }}">
                         Categories</a>
                 </li>
+                @endcan
             </ul>
+
         </aside>
         <main class="flex-1">
             <x-panel>

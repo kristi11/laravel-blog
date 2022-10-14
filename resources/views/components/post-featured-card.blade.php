@@ -3,15 +3,7 @@
     class="transition-colors duration-300 hover:bg-gray-100 border border-black border-opacity-0 hover:border-opacity-5 rounded-xl">
     <div class="py-6 px-5 lg:flex">
         <div class="flex-1 lg:mr-8">
-            <img src =
-                @if (! $post->thumbnail)
-                    "https://dummyimage.com/600x400/ededed/ffffff.jpg&text=Empty+placeholder"
-                @else
-                    {{ asset('storage/' . $post->thumbnail) }}
-                @endif
-                    alt="Blog Post illustration"
-                    class="rounded-xl w-full"
-            >
+            @include('posts.post_picture')
         </div>
 
         <div class="flex-1 flex flex-col justify-between">
@@ -38,7 +30,7 @@
 
             <footer class="flex justify-between items-center mt-8">
                 <div class="flex items-center text-sm">
-                    <img src="https://i.pravatar.cc/60?u={{ $post->user_id }}" alt="Lary avatar" class="rounded-xl">
+                    @include('posts.user_profile_pic')
                     <div class="ml-3">
                         <h5 class="font-bold">
                                <a href="/?author={{ $post->author->username }}"> {{ $post->author->name }}</a>

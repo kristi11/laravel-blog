@@ -6,7 +6,7 @@
             <header class="flex items-center">
                 @csrf
 
-                <img src="https://i.pravatar.cc/60?u={{ auth()->id() }}" width="40" height="40" class="rounded-full">
+            @include('posts.user_profile_pic')
                 <h2 class="ml-4">Want to participate?</h2>
             </header>
             <div class="mt-6">
