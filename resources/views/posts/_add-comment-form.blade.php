@@ -6,7 +6,18 @@
             <header class="flex items-center">
                 @csrf
 
-            @include('posts.user_profile_pic')
+            <img src =
+                @if (! auth()->user()->profile_picture)
+                    "https://i.pravatar.cc/60?u={{ auth()->user()->id }}"
+                @else
+                    {{ asset('storage/' . auth()->user()->profile_picture) }}
+                @endif
+                    alt="Blog comment user"
+                    class="rounded-xl"
+                    width="60"
+                    height="60"
+            >
+
                 <h2 class="ml-4">Want to participate?</h2>
             </header>
             <div class="mt-6">
