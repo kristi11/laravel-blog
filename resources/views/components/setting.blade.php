@@ -10,16 +10,21 @@
 
             <ul>
                 <li>
-                    <a href="/users" class="{{ request()->is('users') ? 'text-blue-500' : '' }}">
+                    <a href="/users/{{ auth()->user()->id }}" class="{{ request()->is('users/'.auth()->user()->id) ? 'text-blue-500' : '' }}">
                         Account
                     </a>
                 </li>
                 @can ('admin')
+                    </li>
+                        <a href="/users" class="{{ request()->is('users') ? 'text-blue-500' : '' }}">
+                            All users
+                        </a>
+                    </li>
+
                     <li>
                         <a href="/admin/posts" class="{{ request()->is('admin/posts') ? 'text-blue-500' : '' }}">
                             All posts
                         </a>
-                    </li>
 
                     <li>
                         <a href="/admin/posts/create" class="{{ request()->is('admin/posts/create') ? 'text-blue-500' : '' }}">

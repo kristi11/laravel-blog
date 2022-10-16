@@ -10,13 +10,14 @@ class UsersController extends Controller
 {
     public function index()
     {
-        $user = auth()->user();
-        return view(
-            'users.index',
-            [
-                'user' => $user
-            ]
-        );
+        return  view('users.index', [
+            'users' => User::paginate(10)->withQueryString()
+        ]);
+    }
+
+    public function show(User $user)
+    {
+        return view('users.show', ['user' => $user]);
     }
 
     public function edit(User $user)
@@ -35,6 +36,16 @@ class UsersController extends Controller
         $user->update($attributes);
 
         return back()->with('success', 'User updated!');
+    }
+
+    public function destroy(User $user)
+    {
+        if ($user->admin == true) {
+            return back()->with('error', 'Administrators cannot be deleted');
+        }
+        $user->delete();
+
+        return redirect('/')->with('success', 'Account deleted!');
     }
 
     // ?user $user = null ---> you dont have to give us a user but if you do we will accept it

@@ -28,8 +28,9 @@
                     <x-slot name="trigger">
                         <button class="text-xs font-bold uppercase">Welcome, {{ auth()->user()->name }}</button>
                     </x-slot>
-                        <x-dropdown-item href="/users" :active="request()->is('users')">Account</x-dropdown-item>
+                        <x-dropdown-item href="/users/{{ auth()->user()->id }}" :active="request()->is('/users/{{ auth()->user()->id }}')">Account</x-dropdown-item>
                     @can('admin')
+                        <x-dropdown-item href="/users" :active="request()->is('users')">All users</x-dropdown-item>
                         <x-dropdown-item href="/admin/posts" :active="request()->is('admin/posts')">All posts</x-dropdown-item>
                         <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/posts/create')">New Post</x-dropdown-item>
                     @endcan
@@ -92,5 +93,6 @@
             </div>
         </footer>
     </section>
-    <x-flash />
+    <x-flash-success />
+    <x-flash-error />
 </body>

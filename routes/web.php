@@ -21,7 +21,7 @@ use App\Http\Controllers\AdminCategoriesController;
 
     // Authenticated users----------------------------------------------------------------
     Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth');
-    Route::resource('users', UsersController::class);
+    Route::resource('users', UsersController::class)->middleware('auth');
 
     // All users--------------------------------------------------------------------------
     Route::get('/', [PostController::class, 'index'])->name('home');

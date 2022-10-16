@@ -4,6 +4,5 @@
     @else
         {{ asset('storage/' . $user->profile_picture) }}
     @endif
-        alt="Blog Post illustration"
         class="rounded-xl w-full"
 >
