@@ -45,7 +45,7 @@ class AdminCategoriesController extends Controller
     public function destroy(Category $category)
     {
         if (count($category->posts) > 0) {
-            return back()->with(['success' => 'Category cannot be deleted because there are posts associated with it']);
+            return back()->with(['error' => 'Category cannot be deleted because there are posts associated with it']);
         } else {
             $category->delete();
 
