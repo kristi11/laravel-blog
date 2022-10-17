@@ -15,11 +15,7 @@ This is a simple laravel blog.This project is built with laravel 9,alipnejs and 
 - Using databse seeders
 - Added CRUD functionality for categories
 - Added CRUD functionality for users (Users can now view/edit their accounts)
-
-## To Do
-
-- User verification
-- Password reset functionality
+- Admins can now view all users including their status and how many posts theyve created.
 
 ## Getting Started
 
