@@ -6,27 +6,27 @@
                     <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
                         <table class="min-w-full divide-y divide-gray-200">
                             <thead class="bg-gray-100 border-b">
-            <tr>
-              <th scope="col" class="text-sm font-bold font-medium text-gray-900 px-6 py-4 text-left">
-                Profile pic
-              </th>
-              <th scope="col" class="text-sm font-bold font-medium text-gray-900 px-6 py-4 text-left">
-                Name
-              </th>
-              <th scope="col" class="text-sm font-bold font-medium text-gray-900 px-6 py-4 text-left">
-                Username
-              </th>
-              <th scope="col" class="text-sm font-bold font-medium text-gray-900 px-6 py-4 text-left">
-                Email
-              </th>
-              <th scope="col" class="text-sm font-bold font-medium text-gray-900 px-6 py-4 text-left">
-                Created
-              </th>
-              <th scope="col" class="text-sm font-bold font-medium text-gray-900 px-6 py-4 text-left">
-                Role
-              </th>
-            </tr>
-          </thead>
+                                <tr>
+                                  <th scope="col" class="text-sm font-bold font-medium text-gray-900 px-6 py-4 text-left">
+                                    Profile pic
+                                  </th>
+                                  <th scope="col" class="text-sm font-bold font-medium text-gray-900 px-6 py-4 text-left">
+                                    Name
+                                  </th>
+                                  <th scope="col" class="text-sm font-bold font-medium text-gray-900 px-6 py-4 text-left">
+                                    Username
+                                  </th>
+                                  <th scope="col" class="text-sm font-bold font-medium text-gray-900 px-6 py-4 text-left">
+                                    Email
+                                  </th>
+                                  <th scope="col" class="text-sm font-bold font-medium text-gray-900 px-6 py-4 text-left">
+                                    Created
+                                  </th>
+                                  <th scope="col" class="text-sm font-bold font-medium text-gray-900 px-6 py-4 text-left">
+                                    Role
+                                  </th>
+                                </tr>
+                              </thead>
                             <tbody class="bg-white divide-y divide-gray-200">
                                 @foreach ($users as $user)
                                     <tr>
