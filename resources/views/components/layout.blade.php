@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
-<title>My awesome project</title>
+@include('seo.meta-tags')
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <script src="https://kit.fontawesome.com/ed41ef9b64.js" crossorigin="anonymous"></script>
