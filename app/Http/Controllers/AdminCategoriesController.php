@@ -10,10 +10,12 @@ class AdminCategoriesController extends Controller
 {
     public function index()
     {
+        $category = Category::with('posts');
+
         return view(
             'admin.categories.index',
             [
-                'categories' => Category::paginate(10)->withQueryString()
+                'categories' => $category->paginate(10)->withQueryString()
             ]
         );
     }
