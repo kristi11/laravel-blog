@@ -27,6 +27,7 @@ Open the console and `cd` into your project root directory.
 - To give the users the ability to subscribe make sure to change `'server' => 'your-server-nr-here'` to your server code on `AppServiceProvider.php` and `MAILCHIMP_KEY=...your-mailchimp-key-here...
 MAILCHIMP_LIST_SUBSCRIBERS=...your-list-id-here...` to your server  id's on your `.env` file.
 - Run `php artisan serve` to boot up the app.<br />
+- `barryvdh/laravel-debugbar` has been added for testing. The debug bar with only show if `APP_DEBUG` is set to true on `.env` file.
 Have fun toying around with your brand new app.
 
 #### Any outside help or ideas are more than welcome.
